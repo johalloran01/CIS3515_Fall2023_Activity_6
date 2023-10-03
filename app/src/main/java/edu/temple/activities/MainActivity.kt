@@ -37,15 +37,16 @@ class MainActivity : AppCompatActivity() {
 
 
 /* Convert to RecyclerView.Adapter */
-class TextSizeAdapter (private val textSizes: Array<Int>, callback: (Int)->Unit) : RecyclerView.Adapter<TextSizeAdapter.TextSizeViewHolder>() {
+class TextSizeAdapter (private val textSizes: Array<Int>, _callback: (Int)->Unit) : RecyclerView.Adapter<TextSizeAdapter.TextSizeViewHolder>() {
+    private var callback = _callback
 
     // TODO Step 1: Complete onClickListener to return selected number
     inner class TextSizeViewHolder(val textView: TextView) : RecyclerView.ViewHolder (textView) {
         init {
             textView.setOnClickListener {
                 //This should return the indexed value that is clicked.
-                //Checking to see comment
-                textSizes[it.id]
+                //Used callback to return the value
+                callback(textSizes[it.id])
             }
         }
     }
