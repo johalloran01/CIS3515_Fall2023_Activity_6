@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             // TODO Step2: Implement lambda body to launch new activity and pass value
             adapter = TextSizeAdapter(textSizes){
 
+
             }
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
@@ -41,7 +42,11 @@ class TextSizeAdapter (private val textSizes: Array<Int>, callback: (Int)->Unit)
     // TODO Step 1: Complete onClickListener to return selected number
     inner class TextSizeViewHolder(val textView: TextView) : RecyclerView.ViewHolder (textView) {
         init {
-            textView.setOnClickListener {  }
+            textView.setOnClickListener {
+                //This should return the indexed value that is clicked.
+                //Checking to see comment
+                textSizes[it.id]
+            }
         }
     }
 
