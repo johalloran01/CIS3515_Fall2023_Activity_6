@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, DisplayActivity::class.java)
 
                 //put the selected text size into the intent
-                intent.putExtra("Selected Text Size: ", selectedTextSize)
+                intent.putExtra("size", selectedTextSize)
 
                 //Start activity
                 startActivity(intent)
