@@ -53,9 +53,11 @@ class TextSizeAdapter (private val textSizes: Array<Int>, _callback: (Int)->Unit
     inner class TextSizeViewHolder(val textView: TextView) : RecyclerView.ViewHolder (textView) {
         init {
             textView.setOnClickListener {
+                //Create val
+                val selectedTextSize = textSizes[adapterPosition].toString().toInt()
                 //This should return the indexed value that is clicked.
                 //Used callback to return the value
-                callback(textSizes[adapterPosition].toString().toInt())
+                callback(selectedTextSize)
             }
         }
     }
