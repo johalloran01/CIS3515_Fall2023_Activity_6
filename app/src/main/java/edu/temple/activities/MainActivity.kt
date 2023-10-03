@@ -55,7 +55,7 @@ class TextSizeAdapter (private val textSizes: Array<Int>, _callback: (Int)->Unit
             textView.setOnClickListener {
                 //This should return the indexed value that is clicked.
                 //Used callback to return the value
-                callback(textSizes[it.id])
+                callback(textSizes[adapterPosition])
             }
         }
     }
