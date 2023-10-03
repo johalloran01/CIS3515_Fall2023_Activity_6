@@ -1,5 +1,6 @@
 package edu.temple.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -23,7 +24,15 @@ class MainActivity : AppCompatActivity() {
         with (findViewById(R.id.textSizeSelectorRecyclerView) as RecyclerView) {
 
             // TODO Step2: Implement lambda body to launch new activity and pass value
-            adapter = TextSizeAdapter(textSizes){
+            adapter = TextSizeAdapter(textSizes){selectedTextSize ->
+                //Create intent
+                val intent = Intent(this@MainActivity, DisplayActivity::class.java)
+
+                //put the selected text size into the intent
+                intent.putExtra("Selected Text Size: ", selectedTextSize)
+
+                //Start activity
+                startActivity(intent)
 
 
             }
